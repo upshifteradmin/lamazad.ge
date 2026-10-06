@@ -1,0 +1,128 @@
+[
+  {
+    "customerName": "ნიკკ",
+    "phoneNumber": "+995 571815581",
+    "districtId": "old-batumi",
+    "districtName": "ძველი ბათუმი (Old Batumi)",
+    "streetAddress": "კლჯკლლკჯკლ",
+    "apartment": "5",
+    "paymentMethod": "cash",
+    "subtotal": 525,
+    "deliveryFee": 0,
+    "totalAmount": 525,
+    "items": [
+      {
+        "id": "demo-item-1",
+        "productId": "prod-01",
+        "title": "HOODIE \"BATUMI NOCTURNE\" (500 GSM)",
+        "price": 185,
+        "quantity": 1,
+        "image": "https://images.unsplash.com/photo-1556905055-8f358a7a47b2?auto=format&fit=crop&w=1000&q=80",
+        "size": "L",
+        "colorName": "Washed Black"
+      },
+      {
+        "productId": "prod-02",
+        "title": "KICKZ V1 \"BLACK SEA CHRONO\"",
+        "price": 340,
+        "quantity": 1,
+        "image": "https://images.unsplash.com/photo-1552346154-21d32810aba3?auto=format&fit=crop&w=1000&q=80",
+        "size": "40",
+        "colorName": "Phantom Jet",
+        "id": "prod-02-40-Phantom Jet"
+      }
+    ],
+    "productSummary": "HOODIE \"BATUMI NOCTURNE\" (500 GSM) (L) x1; KICKZ V1 \"BLACK SEA CHRONO\" (40) x1",
+    "id": "LMZ-79920",
+    "createdAt": "2026-10-06T18:55:01.014Z",
+    "status": "ახალი"
+  },
+  {
+    "id": "LMZ-84192",
+    "createdAt": "2026-10-06T17:54:20.122Z",
+    "customerName": "ლუკა ბერიძე",
+    "phoneNumber": "+995 595 12 34 56",
+    "districtId": "old-batumi",
+    "districtName": "ძველი ბათუმი",
+    "streetAddress": "მემედ აბაშიძის 28",
+    "apartment": "ბინა 4",
+    "paymentMethod": "cash",
+    "subtotal": 185,
+    "deliveryFee": 0,
+    "totalAmount": 185,
+    "status": "მზადდება",
+    "productSummary": "HOODIE \"BATUMI NOCTURNE\" (L)",
+    "items": [
+      {
+        "id": "item-seed-1",
+        "title": "HOODIE \"BATUMI NOCTURNE\" (500 GSM)",
+        "price": 185,
+        "quantity": 1,
+        "size": "L",
+        "colorName": "Washed Black",
+        "image": "https://images.unsplash.com/photo-1556905055-8f358a7a47b2?auto=format&fit=crop&w=600&q=80"
+      }
+    ]
+  },
+  {
+    "id": "LMZ-63028",
+    "createdAt": "2026-10-06T15:39:20.122Z",
+    "customerName": "მარიამ დოლიძე",
+    "phoneNumber": "+995 577 98 76 54",
+    "districtId": "rustaveli",
+    "districtName": "რუსთაველის გამზირი",
+    "streetAddress": "რუსთაველის 14",
+    "apartment": "სართული 2",
+    "paymentMethod": "card",
+    "subtotal": 110,
+    "deliveryFee": 0,
+    "totalAmount": 110,
+    "status": "ახალი",
+    "productSummary": "CUSTOM STUDIO: Oversized T-Shirt \"ლამაზად BATUMI\"",
+    "items": [
+      {
+        "id": "item-seed-2",
+        "title": "CUSTOM LAB: Oversized T-Shirt (წინა მხარე)",
+        "price": 110,
+        "quantity": 1,
+        "size": "M",
+        "colorName": "Acid Slate",
+        "isCustomStudio": true,
+        "image": "https://images.unsplash.com/photo-1521572267360-ee0c2909d518?auto=format&fit=crop&w=600&q=80",
+        "customDetails": {
+          "garmentType": "tee-front",
+          "garmentColor": "Acid Slate",
+          "textPrint": "ლამაზად BATUMI",
+          "printStyle": "puff"
+        }
+      }
+    ]
+  },
+  {
+    "id": "LMZ-51920",
+    "createdAt": "2026-10-06T08:39:20.122Z",
+    "customerName": "გიორგი მაისურაძე",
+    "phoneNumber": "+995 599 44 55 66",
+    "districtId": "khimshiashvili",
+    "districtName": "ხიმშიაშვილი / ახალი ბულვარი",
+    "streetAddress": "ხიმშიაშვილის 15B",
+    "apartment": "ორბი სითი, ბლოკი C",
+    "paymentMethod": "cash",
+    "subtotal": 340,
+    "deliveryFee": 0,
+    "totalAmount": 340,
+    "status": "კურიერთანაა",
+    "productSummary": "KICKZ V1 \"BLACK SEA CHRONO\" (43)",
+    "items": [
+      {
+        "id": "item-seed-3",
+        "title": "KICKZ V1 \"BLACK SEA CHRONO\"",
+        "price": 340,
+        "quantity": 1,
+        "size": "43",
+        "colorName": "Phantom Jet",
+        "image": "https://images.unsplash.com/photo-1552346154-21d32810aba3?auto=format&fit=crop&w=600&q=80"
+      }
+    ]
+  }
+]

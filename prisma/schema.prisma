@@ -1,0 +1,74 @@
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model Product {
+  id              String      @id @default(cuid())
+  slug            String      @unique
+  titleKa         String
+  titleEn         String
+  category        String      // "sneakers" | "streetwear" | "limited-drops"
+  price           Float
+  originalPrice   Float?
+  stockCount      Int         @default(10)
+  isLimitedDrop   Boolean     @default(false)
+  descriptionKa   String
+  descriptionEn   String
+  images          String[]
+  videoPreview    String?
+  sizes           String[]
+  createdAt       DateTime    @default(now())
+  updatedAt       DateTime    @updatedAt
+  orderItems      OrderItem[]
+}
+
+model CustomDesign {
+  id                String       @id @default(cuid())
+  garmentType       String       // tee-front, tee-back, hoodie, sneakers
+  garmentColor      String
+  garmentSize       String
+  layersJson        String       // JSON stringified canvas layers
+  compositeImageUrl String?
+  price             Float
+  createdAt         DateTime     @default(now())
+  orderItems        OrderItem[]
+}
+
+model Order {
+  id              String        @id @default(cuid())
+  orderNumber     String        @unique // e.g. LMZ-123456
+  customerName    String
+  phoneNumber     String
+  districtId      String
+  districtName    String
+  streetAddress   String
+  apartment       String?
+  paymentMethod   String        // "cash" | "card" | "transfer"
+  subtotal        Float
+  deliveryFee     Float         @default(0)
+  totalAmount     Float
+  status          String        @default("PENDING") // PENDING, PROCESSING, COURIER_ASSIGNED, DELIVERED
+  createdAt       DateTime      @default(now())
+  updatedAt       DateTime      @updatedAt
+  items           OrderItem[]
+}
+
+model OrderItem {
+  id              String        @id @default(cuid())
+  orderId         String
+  order           Order         @relation(fields: [orderId], references: [id], onDelete: Cascade)
+  productId       String?
+  product         Product?      @relation(fields: [productId], references: [id])
+  customDesignId  String?
+  customDesign    CustomDesign? @relation(fields: [customDesignId], references: [id])
+  title           String
+  price           Float
+  quantity        Int           @default(1)
+  size            String
+  colorName       String?
+}
