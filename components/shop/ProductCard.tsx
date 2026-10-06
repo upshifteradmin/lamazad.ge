@@ -306,7 +306,7 @@ export function ProductCard({ product }: ProductCardProps) {
                     e.stopPropagation();
                     setSelectedSize(size);
                   }}
-                  className={`px-2.5 py-1 rounded-lg text-xs font-mono font-bold transition-all border ${
+                  className={`min-h-[34px] min-w-[36px] px-2.5 py-1 rounded-lg text-xs font-mono font-bold transition-all border flex items-center justify-center active:scale-95 ${
                     selectedSize === size
                       ? 'border-brand-lime bg-brand-lime text-black shadow-neon-lime'
                       : 'border-border-subtle bg-surface text-gray-300 hover:border-gray-500'
@@ -322,7 +322,7 @@ export function ProductCard({ product }: ProductCardProps) {
           <div className="grid grid-cols-2 gap-2 mt-4">
             <button
               onClick={handleAddToCart}
-              className={`py-2.5 px-3 rounded-xl border text-xs font-bold flex items-center justify-center gap-1.5 transition-all active:scale-95 ${
+              className={`min-h-[44px] py-2.5 px-3 rounded-xl border text-xs font-bold flex items-center justify-center gap-1.5 transition-all active:scale-95 ${
                 isAddedFeedback
                   ? 'border-brand-lime bg-brand-lime text-black font-extrabold'
                   : 'border-border-subtle bg-surface hover:border-brand-lime/60 hover:text-brand-lime text-white'
@@ -343,7 +343,7 @@ export function ProductCard({ product }: ProductCardProps) {
 
             <button
               onClick={handleInstantBuy}
-              className="py-2.5 px-3 rounded-xl bg-brand-lime hover:bg-brand-lime/90 active:scale-95 text-black font-extrabold text-xs flex items-center justify-center gap-1.5 transition-all shadow-neon-lime"
+              className="min-h-[44px] py-2.5 px-3 rounded-xl bg-brand-lime hover:bg-[#bbf000] active:scale-95 text-black font-extrabold text-xs flex items-center justify-center gap-1.5 transition-all shadow-neon-lime"
             >
               <Zap className="w-3.5 h-3.5 fill-black" />
               ლამაზად ყიდვა
