@@ -389,6 +389,21 @@ export function DesignStudio() {
     isDraggingRef.current = false;
   };
 
+  const nudgeLayer = (dx: number, dy: number) => {
+    const targetId = activeLayerId || 'layer-main-text';
+    setLayers((prev) =>
+      prev.map((l) =>
+        l.id === targetId
+          ? {
+              ...l,
+              x: Math.max(20, Math.min(80, l.x + dx)),
+              y: Math.max(20, Math.min(80, l.y + dy)),
+            }
+          : l
+      )
+    );
+  };
+
   // Add Sticker
   const handleAddSticker = (sticker: (typeof PRESET_STICKERS)[0]) => {
     const newId = `stk-${Date.now()}`;
@@ -510,11 +525,12 @@ export function DesignStudio() {
                 if (t) handleCanvasStart(t.clientX, t.clientY);
               }}
               onTouchMove={(e) => {
+                if (!isDraggingRef.current) return;
                 const t = e.touches[0];
                 if (t) handleCanvasMove(t.clientX, t.clientY);
               }}
               onTouchEnd={handleCanvasEnd}
-              className="w-full h-full object-contain cursor-grab active:cursor-grabbing rounded-2xl shadow-2xl touch-none"
+              className="w-full h-full object-contain cursor-grab active:cursor-grabbing rounded-2xl shadow-2xl touch-pan-y"
             />
           </div>
 
@@ -701,6 +717,44 @@ export function DesignStudio() {
                     onChange={(e) => handleScaleChange(parseFloat(e.target.value))}
                     className="w-full accent-brand-lime cursor-pointer"
                   />
+                </div>
+
+                {/* 7. Position Nudge Buttons */}
+                <div>
+                  <div className="flex justify-between text-xs font-mono text-zinc-400 mb-1.5">
+                    <span>პოზიციის კორექცია</span>
+                    <span className="text-[10px] text-brand-lime">ნაბიჯ-ნაბიჯ</span>
+                  </div>
+                  <div className="grid grid-cols-4 gap-1.5">
+                    <button
+                      type="button"
+                      onClick={() => nudgeLayer(-3, 0)}
+                      className="py-2.5 rounded-xl bg-[#16161f] border border-white/10 hover:border-brand-lime text-xs font-bold text-zinc-300 hover:text-white transition-all flex items-center justify-center active:scale-95"
+                    >
+                      ⬅️
+                    </button>
+                    <button
+                      type="button"
+                      onClick={() => nudgeLayer(0, -3)}
+                      className="py-2.5 rounded-xl bg-[#16161f] border border-white/10 hover:border-brand-lime text-xs font-bold text-zinc-300 hover:text-white transition-all flex items-center justify-center active:scale-95"
+                    >
+                      ⬆️
+                    </button>
+                    <button
+                      type="button"
+                      onClick={() => nudgeLayer(0, 3)}
+                      className="py-2.5 rounded-xl bg-[#16161f] border border-white/10 hover:border-brand-lime text-xs font-bold text-zinc-300 hover:text-white transition-all flex items-center justify-center active:scale-95"
+                    >
+                      ⬇️
+                    </button>
+                    <button
+                      type="button"
+                      onClick={() => nudgeLayer(3, 0)}
+                      className="py-2.5 rounded-xl bg-[#16161f] border border-white/10 hover:border-brand-lime text-xs font-bold text-zinc-300 hover:text-white transition-all flex items-center justify-center active:scale-95"
+                    >
+                      ➡️
+                    </button>
+                  </div>
                 </div>
               </div>
             )}

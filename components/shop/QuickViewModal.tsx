@@ -43,39 +43,47 @@ export function QuickViewModal() {
 
   return (
     <AnimatePresence>
-      <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-md">
+      <div
+        onClick={(e) => {
+          if (e.target === e.currentTarget) setQuickViewProduct(null);
+        }}
+        className="fixed inset-0 z-50 overflow-y-auto bg-black/85 backdrop-blur-md p-2 sm:p-4 md:p-6 flex items-start sm:items-center justify-center overscroll-contain"
+      >
         <motion.div
-          initial={{ opacity: 0, scale: 0.95 }}
-          animate={{ opacity: 1, scale: 1 }}
-          exit={{ opacity: 0, scale: 0.95 }}
-          className="w-full max-w-4xl bg-[#0e0e12] border border-border-subtle rounded-3xl overflow-hidden shadow-2xl relative grid grid-cols-1 md:grid-cols-2 text-white"
+          initial={{ opacity: 0, scale: 0.95, y: 15 }}
+          animate={{ opacity: 1, scale: 1, y: 0 }}
+          exit={{ opacity: 0, scale: 0.95, y: 15 }}
+          className="w-full max-w-4xl max-h-[92vh] overflow-y-auto overscroll-contain bg-[#0e0e12] border border-border-subtle rounded-3xl shadow-2xl relative flex flex-col md:grid md:grid-cols-2 text-white my-auto"
         >
           {/* Close button */}
           <button
             onClick={() => setQuickViewProduct(null)}
-            className="absolute top-4 right-4 z-20 p-2.5 rounded-full bg-black/60 border border-white/10 text-gray-400 hover:text-white hover:bg-black transition-all"
+            className="absolute top-3 right-3 sm:top-4 sm:right-4 z-30 p-2.5 rounded-full bg-black/80 border border-white/20 text-gray-300 hover:text-white hover:bg-black transition-all min-h-[44px] min-w-[44px] flex items-center justify-center shadow-lg"
+            aria-label="დახურვა"
           >
             <X className="w-5 h-5" />
           </button>
 
           {/* Left: Media gallery */}
-          <div className="p-6 bg-[#121217] flex flex-col justify-between">
-            <div className="relative aspect-square w-full rounded-2xl overflow-hidden bg-black/40 border border-border-subtle">
+          <div className="p-4 sm:p-6 bg-[#121217] flex flex-col justify-start">
+            <div className="relative aspect-[4/3] sm:aspect-square w-full rounded-2xl overflow-hidden bg-black/40 border border-border-subtle">
               <Image
                 src={quickViewProduct.images[selectedImage] || quickViewProduct.images[0]}
                 alt={quickViewProduct.titleKa}
                 fill
                 className="object-cover"
+                sizes="(max-width: 768px) 100vw, 50vw"
+                priority
               />
             </div>
 
             {/* Thumbnail selector */}
-            <div className="flex gap-2.5 mt-4">
+            <div className="flex gap-2 sm:gap-2.5 mt-3 sm:mt-4 overflow-x-auto pb-1">
               {quickViewProduct.images.map((img, idx) => (
                 <button
                   key={idx}
                   onClick={() => setSelectedImage(idx)}
-                  className={`relative w-16 h-16 rounded-xl overflow-hidden border-2 transition-all ${
+                  className={`relative w-14 h-14 sm:w-16 sm:h-16 rounded-xl overflow-hidden border-2 shrink-0 transition-all ${
                     selectedImage === idx ? 'border-brand-lime shadow-neon-lime' : 'border-transparent opacity-60'
                   }`}
                 >
@@ -86,10 +94,10 @@ export function QuickViewModal() {
           </div>
 
           {/* Right: Info & Buying */}
-          <div className="p-8 flex flex-col justify-between">
+          <div className="p-5 sm:p-8 flex flex-col justify-between">
             <div>
               {/* Brand and authenticity guarantee */}
-              <div className="flex items-center justify-between gap-2 mb-2">
+              <div className="flex items-center justify-between gap-2 mb-2 pr-8 sm:pr-0">
                 <span className="text-xs uppercase tracking-widest text-zinc-300 font-mono font-black">
                   {quickViewProduct.brand}
                 </span>
@@ -108,12 +116,12 @@ export function QuickViewModal() {
                 <span className="text-xs font-mono text-brand-muted">BATUMI EDITION</span>
               </div>
 
-              <h2 className="text-2xl font-black tracking-tight text-white mb-2">
+              <h2 className="text-xl sm:text-2xl font-black tracking-tight text-white mb-2">
                 {quickViewProduct.titleKa}
               </h2>
 
               <div className="flex items-baseline gap-3 mb-4">
-                <span className="text-3xl font-black text-brand-lime font-mono">
+                <span className="text-2xl sm:text-3xl font-black text-brand-lime font-mono">
                   {formatGEL(quickViewProduct.price)}
                 </span>
                 {quickViewProduct.originalPrice && (
@@ -123,12 +131,12 @@ export function QuickViewModal() {
                 )}
               </div>
 
-              <p className="text-xs text-gray-300 leading-relaxed mb-6">
+              <p className="text-xs text-gray-300 leading-relaxed mb-5">
                 {quickViewProduct.descriptionKa}
               </p>
 
               {/* Specs */}
-              <div className="space-y-2 mb-6 p-4 rounded-2xl bg-surface border border-border-subtle">
+              <div className="space-y-1.5 mb-5 p-3.5 rounded-2xl bg-surface border border-border-subtle">
                 {quickViewProduct.specs.map((s, idx) => (
                   <div key={idx} className="flex justify-between text-xs">
                     <span className="text-brand-muted">{s.label}:</span>
@@ -138,16 +146,16 @@ export function QuickViewModal() {
               </div>
 
               {/* Size Selector */}
-              <div className="mb-6">
+              <div className="mb-5">
                 <div className="text-xs font-mono uppercase text-brand-muted mb-2">
                   ზომა (SIZE):
                 </div>
-                <div className="flex gap-2">
+                <div className="flex flex-wrap gap-2">
                   {quickViewProduct.sizes.map((size) => (
                     <button
                       key={size}
                       onClick={() => setSelectedSize(size)}
-                      className={`w-11 h-11 rounded-xl font-mono text-xs font-bold border transition-all ${
+                      className={`min-w-[44px] min-h-[44px] px-3 rounded-xl font-mono text-xs font-bold border transition-all flex items-center justify-center ${
                         selectedSize === size
                           ? 'border-brand-lime bg-brand-lime text-black shadow-neon-lime'
                           : 'border-border-subtle bg-surface text-gray-300 hover:border-gray-500'
@@ -165,27 +173,27 @@ export function QuickViewModal() {
               <div className="grid grid-cols-2 gap-3">
                 <button
                   onClick={handleAddToCart}
-                  className="py-3 px-4 rounded-xl border border-border-subtle hover:border-brand-lime bg-surface text-white font-bold text-xs flex items-center justify-center gap-2 transition-all active:scale-95"
+                  className="min-h-[48px] px-4 rounded-xl border border-border-subtle hover:border-brand-lime bg-surface text-white font-bold text-xs flex items-center justify-center gap-2 transition-all active:scale-95"
                 >
                   <ShoppingBag className="w-4 h-4 text-brand-lime" />
                   კალათაში
                 </button>
                 <button
                   onClick={handleInstantBuy}
-                  className="py-3 px-4 rounded-xl bg-brand-lime text-black font-black text-xs flex items-center justify-center gap-2 transition-all hover:bg-brand-lime/90 active:scale-95 shadow-neon-lime"
+                  className="min-h-[48px] px-4 rounded-xl bg-brand-lime text-black font-black text-xs flex items-center justify-center gap-2 transition-all hover:bg-brand-lime/90 active:scale-95 shadow-neon-lime"
                 >
                   <Zap className="w-4 h-4 fill-black" />
                   ლამაზად ყიდვა
                 </button>
               </div>
 
-              <div className="flex items-center justify-between text-[11px] text-brand-muted pt-2">
+              <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1 text-[11px] text-brand-muted pt-1">
                 <span className="flex items-center gap-1.5">
-                  <Truck className="w-3.5 h-3.5 text-brand-cyan" />
+                  <Truck className="w-3.5 h-3.5 text-brand-cyan shrink-0" />
                   ბათუმში მიტანა 2-4 საათში
                 </span>
                 <span className="flex items-center gap-1.5">
-                  <Shield className="w-3.5 h-3.5 text-brand-lime" />
+                  <Shield className="w-3.5 h-3.5 text-brand-lime shrink-0" />
                   100% ორიგინალი ხარისხი
                 </span>
               </div>

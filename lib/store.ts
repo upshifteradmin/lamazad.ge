@@ -47,19 +47,7 @@ interface CartStore {
 }
 
 export const useCartStore = create<CartStore>((set, get) => ({
-  items: [
-    // Pre-populate with 1 stylish item so the user immediately sees the experience
-    {
-      id: 'demo-item-1',
-      productId: 'prod-01',
-      title: 'HOODIE "BATUMI NOCTURNE" (500 GSM)',
-      price: 185,
-      quantity: 1,
-      image: 'https://images.unsplash.com/photo-1556905055-8f358a7a47b2?auto=format&fit=crop&w=1000&q=80',
-      size: 'L',
-      colorName: 'Washed Black',
-    },
-  ],
+  items: [],
   isDrawerOpen: false,
   isCheckoutOpen: false,
   quickViewProduct: null,
