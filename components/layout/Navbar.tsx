@@ -69,12 +69,6 @@ export function Navbar() {
               <Sparkles className="w-3.5 h-3.5 text-brand-cyan" />
               DESIGN LAB (Studio)
             </Link>
-            <Link
-              href="/admin"
-              className="text-gray-400 hover:text-white transition-colors flex items-center gap-1.5 font-mono text-[11px]"
-            >
-              ადმინი
-            </Link>
           </nav>
         </div>
 
@@ -153,13 +147,6 @@ export function Navbar() {
             className="block text-sm font-semibold text-brand-cyan"
           >
             🎨 DESIGN LAB (შენი დიზაინი)
-          </Link>
-          <Link
-            href="/admin"
-            onClick={() => setMobileMenuOpen(false)}
-            className="block text-sm font-semibold text-brand-lime"
-          >
-            🔒 ადმინ პანელი (შეკვეთები)
           </Link>
         </div>
       )}

@@ -22,11 +22,16 @@ import {
   ChevronRight,
   ArrowLeft,
   X,
+  User,
+  LogOut,
 } from 'lucide-react';
 import { OrderRecord, OrderStatus } from '@/lib/orders';
 import { formatGEL } from '@/lib/utils';
 
-const ADMIN_PASSCODE = 'batumi2026';
+const VALID_ADMINS: Record<string, string> = {
+  admin: 'batumi2026',
+  lamazad: 'batumi2026',
+};
 
 const STATUS_OPTIONS: OrderStatus[] = ['ახალი', 'მზადდება', 'კურიერთანაა', 'ჩაბარდა'];
 
@@ -39,8 +44,9 @@ const STATUS_STYLES: Record<OrderStatus, { bg: string; text: string; border: str
 
 export default function AdminDashboardPage() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const [inputUsername, setInputUsername] = useState('');
   const [inputPasscode, setInputPasscode] = useState('');
-  const [passcodeError, setPasscodeError] = useState(false);
+  const [loginError, setLoginError] = useState(false);
 
   const [orders, setOrders] = useState<OrderRecord[]>([]);
   const [loading, setLoading] = useState(false);
@@ -80,13 +86,21 @@ export default function AdminDashboardPage() {
 
   const handleLogin = (e: React.FormEvent) => {
     e.preventDefault();
-    if (inputPasscode === ADMIN_PASSCODE) {
+    const cleanUser = inputUsername.trim().toLowerCase();
+    if (VALID_ADMINS[cleanUser] && VALID_ADMINS[cleanUser] === inputPasscode) {
       setIsAuthenticated(true);
-      setPasscodeError(false);
+      setLoginError(false);
       localStorage.setItem('lmz_admin_auth', 'true');
     } else {
-      setPasscodeError(true);
+      setLoginError(true);
     }
+  };
+
+  const handleLogout = () => {
+    localStorage.removeItem('lmz_admin_auth');
+    setIsAuthenticated(false);
+    setInputUsername('');
+    setInputPasscode('');
   };
 
   const handleStatusChange = async (orderId: string, newStatus: OrderStatus) => {
@@ -136,37 +150,66 @@ export default function AdminDashboardPage() {
     return (
       <div className="min-h-screen bg-[#09090b] flex items-center justify-center p-4">
         <div className="w-full max-w-md bg-[#111116] border border-border-subtle rounded-3xl p-8 shadow-2xl text-center">
-          <div className="w-14 h-14 rounded-2xl bg-brand-lime/10 border border-brand-lime/30 flex items-center justify-center text-brand-lime mx-auto mb-4">
+          <div className="w-14 h-14 rounded-2xl bg-brand-lime/10 border border-brand-lime/30 flex items-center justify-center text-brand-lime mx-auto mb-4 shadow-neon-lime">
             <Lock className="w-7 h-7" />
           </div>
           <h1 className="text-xl font-black text-white">LAMAZAD.GE ADMIN</h1>
           <p className="text-xs text-brand-muted mt-1 mb-6">
-            შეიყვანეთ ადმინისტრატორის პაროლი
+            შეიყვანეთ ადმინისტრატორის მონაცემები
           </p>
 
-          <form onSubmit={handleLogin} className="space-y-4">
+          <form onSubmit={handleLogin} className="space-y-3.5 text-left">
             <div>
-              <input
-                type="password"
-                placeholder="პაროლი (ნაგულისხმევი: batumi2026)"
-                value={inputPasscode}
-                onChange={(e) => {
-                  setInputPasscode(e.target.value);
-                  setPasscodeError(false);
-                }}
-                className="w-full px-4 py-3 bg-surface border border-border-subtle rounded-xl text-center text-sm text-white placeholder-gray-500 focus:outline-none focus:border-brand-lime font-mono"
-              />
-              {passcodeError && (
-                <p className="text-xs text-brand-coral mt-1.5 font-semibold">
-                  არასწორი პაროლი! სცადეთ: batumi2026
+              <label className="text-xs font-mono text-zinc-400 mb-1 block font-semibold">
+                მომხმარებელი (Username)
+              </label>
+              <div className="relative">
+                <User className="w-4 h-4 text-zinc-500 absolute left-3.5 top-1/2 -translate-y-1/2" />
+                <input
+                  type="text"
+                  placeholder="admin"
+                  value={inputUsername}
+                  onChange={(e) => {
+                    setInputUsername(e.target.value);
+                    setLoginError(false);
+                  }}
+                  autoFocus
+                  required
+                  className="w-full pl-10 pr-4 py-3 bg-surface border border-border-subtle rounded-xl text-sm text-white placeholder-gray-500 focus:outline-none focus:border-brand-lime font-mono transition-all"
+                />
+              </div>
+            </div>
+
+            <div>
+              <label className="text-xs font-mono text-zinc-400 mb-1 block font-semibold">
+                პაროლი (Password)
+              </label>
+              <div className="relative">
+                <Lock className="w-4 h-4 text-zinc-500 absolute left-3.5 top-1/2 -translate-y-1/2" />
+                <input
+                  type="password"
+                  placeholder="••••••••"
+                  value={inputPasscode}
+                  onChange={(e) => {
+                    setInputPasscode(e.target.value);
+                    setLoginError(false);
+                  }}
+                  required
+                  className="w-full pl-10 pr-4 py-3 bg-surface border border-border-subtle rounded-xl text-sm text-white placeholder-gray-500 focus:outline-none focus:border-brand-lime font-mono transition-all"
+                />
+              </div>
+              {loginError && (
+                <p className="text-xs text-rose-400 mt-2 font-semibold flex items-center gap-1">
+                  <span>✕</span> არასწორი მომხმარებლის სახელი ან პაროლი!
                 </p>
               )}
             </div>
+
             <button
               type="submit"
-              className="w-full py-3.5 rounded-xl bg-brand-lime text-black font-extrabold text-sm hover:bg-brand-lime/90 transition-all shadow-neon-lime"
+              className="w-full py-3.5 rounded-xl bg-brand-lime hover:bg-[#bbf000] text-black font-black text-sm transition-all shadow-neon-lime active:scale-95 mt-2"
             >
-              შესვლა
+              ადმინ პანელში შესვლა
             </button>
           </form>
 
