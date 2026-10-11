@@ -60,7 +60,7 @@ export function Navbar() {
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-rose-400 opacity-75"></span>
                 <span className="relative inline-flex rounded-full h-2 w-2 bg-rose-500"></span>
               </span>
-              <span>🔥 SALE</span>
+              <span>SALE</span>
             </Link>
             <Link
               href="/studio"
@@ -141,7 +141,7 @@ export function Navbar() {
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-rose-400 opacity-75"></span>
                 <span className="relative inline-flex rounded-full h-2 w-2 bg-rose-500"></span>
               </span>
-              <span>🔥 SALE (ფასდაკლებები)</span>
+              <span>SALE (ფასდაკლებები)</span>
             </Link>
             <Link
               href="/studio"
@@ -160,12 +160,12 @@ export function Navbar() {
               <span className="text-[11px] font-mono text-brand-lime font-bold">24სთ მიტანა</span>
             </div>
             <a
-              href="https://wa.me/995577000000?text=%E1%83%92%E1%83%90%E1%83%9B%E1%83%90%E1%83%A0%E1%83%AF%E1%83%9D%E1%83%91%E1%83%90%2C%20lamazad.ge-%E1%83%A1%20%E1%83%99%E1%83%9D%E1%83%9C%E1%83%A1%E1%83%A3%E1%83%9A%E1%83%A2%E1%83%90%E1%83%AA%E1%83%98%E1%83%90"
+              href="https://wa.me/995500990929?text=%E1%83%92%E1%83%90%E1%83%9B%E1%83%90%E1%83%A0%E1%83%AF%E1%83%9D%E1%83%91%E1%83%90%2C%20lamazad.ge-%E1%83%A1%20%E1%83%99%E1%83%9D%E1%83%9C%E1%83%A1%E1%83%A3%E1%83%9A%E1%83%A2%E1%83%90%E1%83%AA%E1%83%98%E1%83%90"
               target="_blank"
               rel="noreferrer"
               className="w-full py-2.5 px-3 rounded-xl bg-emerald-500/15 border border-emerald-500/30 text-emerald-400 font-bold text-xs flex items-center justify-center gap-2"
             >
-              <span>WhatsApp კონსულტაცია</span>
+              <span>WhatsApp კონსულტაცია (+995 500 99 09 29)</span>
             </a>
             <div className="flex items-center justify-between pt-1 text-[11px] text-zinc-500 font-mono">
               <span>რუსთაველის 18, ბათუმი</span>

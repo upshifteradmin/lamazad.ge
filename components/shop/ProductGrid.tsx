@@ -31,10 +31,10 @@ export function ProductGrid({ products, activeBrand, onBrandChange }: ProductGri
 
   const categories = [
     { id: 'all', label: 'ყველა' },
-    { id: 'sneakers', label: '👟 სნეიკერები' },
-    { id: 'streetwear', label: '👕 ტანსაცმელი' },
-    { id: 'limited-drops', label: '💎 ლიმიტირებული' },
-    { id: 'sale', label: '🔥 SALE %' },
+    { id: 'sneakers', label: 'სნეიკერები' },
+    { id: 'streetwear', label: 'ტანსაცმელი' },
+    { id: 'limited-drops', label: 'ლიმიტირებული' },
+    { id: 'sale', label: 'SALE %' },
   ];
 
   // Brand item counters

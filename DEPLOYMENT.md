@@ -1,4 +1,4 @@
-# 🚀 Production Deployment Guide: lamazad.ge on Ubuntu VPS
+# Production Deployment Guide: lamazad.ge on Ubuntu VPS
 
 This guide provides exact terminal commands to deploy **lamazad.ge** to a clean Ubuntu 22.04 / 24.04 LTS VPS (Hetzner, DigitalOcean, Linode, AWS EC2).
 

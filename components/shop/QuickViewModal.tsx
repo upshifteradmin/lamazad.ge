@@ -192,7 +192,7 @@ export function QuickViewModal() {
                 </span>
                 <span className="flex items-center gap-1.5">
                   <Shield className="w-3.5 h-3.5 text-brand-lime shrink-0" />
-                  ადგილზე მოსინჯვით
+                  სწრაფი მიწოდება
                 </span>
               </div>
             </div>

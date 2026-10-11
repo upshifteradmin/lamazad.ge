@@ -92,7 +92,7 @@ export function CartDrawer() {
                 <span className="flex items-center gap-1.5 text-gray-300">
                   <Truck className="w-3.5 h-3.5 text-brand-cyan shrink-0" />
                   {totalPrice >= freeShippingThreshold ? (
-                    <span className="text-brand-lime font-bold">უფასო მიტანა ბათუმში! 🎉</span>
+                    <span className="text-brand-lime font-bold">უფასო მიტანა ბათუმში!</span>
                   ) : (
                     <span>
                       კიდევ <span className="text-brand-lime font-bold">{formatGEL(freeShippingThreshold - totalPrice)}</span> უფასო მიტანამდე

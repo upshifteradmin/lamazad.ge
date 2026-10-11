@@ -38,7 +38,7 @@ export default function HomePage() {
         <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-surface-elevated border border-border-subtle text-xs font-mono text-gray-300 mb-6 backdrop-blur-md">
           <span className="w-2 h-2 rounded-full bg-brand-lime animate-pulse" />
           <span className="text-brand-lime font-bold">ბათუმი:</span>
-          <span>მიტანა 24 საათში ადგილზე მოსინჯვით</span>
+          <span>მიტანა 24 საათში</span>
         </div>
 
         {/* Hero Title */}
@@ -50,7 +50,7 @@ export default function HomePage() {
 
         <p className="mt-4 text-xs sm:text-sm text-gray-400 max-w-xl mx-auto font-mono">
           Nike • Adidas • Jordan • Levi's • New Balance • Carhartt
-          <br className="hidden sm:inline" /> პრემიუმ კოლექციები • ექსპრეს მიწოდება ბათუმში • ადგილზე მოსინჯვა
+          <br className="hidden sm:inline" /> პრემიუმ კოლექციები • ექსპრეს მიწოდება ბათუმში
         </p>
 
         {/* Direct Action Navigation */}
@@ -67,7 +67,7 @@ export default function HomePage() {
             href="#sale"
             className="flex-1 min-h-[48px] px-6 py-3 rounded-2xl bg-rose-500/15 border border-rose-500/40 hover:border-rose-400 text-rose-400 font-black text-xs sm:text-sm flex items-center justify-center gap-2 hover:bg-rose-500/20 transition-all shadow-[0_0_15px_rgba(244,63,94,0.25)]"
           >
-            <span>🔥 SALE (-30%)</span>
+            <span>SALE (-30%)</span>
           </a>
         </div>
 
@@ -79,7 +79,7 @@ export default function HomePage() {
           </span>
           <span className="flex items-center gap-1.5">
             <ShieldCheck className="w-3.5 h-3.5 text-brand-cyan" />
-            ადგილზე მოსინჯვით
+            ექსპრეს მიწოდება
           </span>
         </div>
       </section>
@@ -157,7 +157,7 @@ export default function HomePage() {
           </p>
           <div className="mt-6 flex flex-wrap items-center justify-center gap-3">
             <a
-              href="https://wa.me/995577000000?text=%E1%83%92%E1%83%90%E1%83%9B%E1%83%90%E1%83%A0%E1%83%AF%E1%83%9D%E1%83%91%E1%83%90%2C%20lamazad.ge-%E1%83%A1%20%E1%83%A8%E1%83%94%E1%83%99%E1%83%95%E1%83%94%E1%83%97%E1%83%90%E1%83%96%E1%83%94%20%E1%83%9B%E1%83%A1%E1%83%A3%E1%83%A0%E1%83%A1%20%E1%83%99%E1%83%9D%E1%83%9C%E1%83%A1%E1%83%A3%E1%83%9A%E1%83%A2%E1%83%90%E1%83%AA%E1%83%98%E1%83%90"
+              href="https://wa.me/995500990929?text=%E1%83%92%E1%83%90%E1%83%9B%E1%83%90%E1%83%A0%E1%83%AF%E1%83%9D%E1%83%91%E1%83%90%2C%20lamazad.ge-%E1%83%A1%20%E1%83%A8%E1%83%94%E1%83%99%E1%83%95%E1%83%94%E1%83%97%E1%83%90%E1%83%96%E1%83%94%20%E1%83%9B%E1%83%A1%E1%83%A3%E1%83%A0%E1%83%A1%20%E1%83%99%E1%83%9D%E1%83%9C%E1%83%A1%E1%83%A3%E1%83%9A%E1%83%A2%E1%83%90%E1%83%AA%E1%83%98%E1%83%90"
               target="_blank"
               rel="noreferrer"
               className="min-h-[44px] px-6 py-2.5 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-black font-extrabold text-xs flex items-center gap-2 transition-all shadow-md"

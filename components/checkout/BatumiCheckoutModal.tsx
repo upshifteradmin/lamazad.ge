@@ -26,7 +26,7 @@ import { formatGEL } from '@/lib/utils';
 import confetti from 'canvas-confetti';
 
 // Store Official Contact Numbers for Auto-Dispatch
-const STORE_WHATSAPP_NUMBER = '995577000000'; // lamazad.ge Batumi WhatsApp dispatch line
+const STORE_WHATSAPP_NUMBER = '995500990929'; // lamazad.ge Batumi WhatsApp dispatch line
 const STORE_FACEBOOK_PAGE = 'lamazad.ge'; // m.me/lamazad.ge
 
 export function BatumiCheckoutModal() {
@@ -155,16 +155,16 @@ export function BatumiCheckoutModal() {
   const formatDispatchMessage = () => {
     if (!completedOrder) return '';
 
-    return `🇬🇪 ახალი შეკვეთა — lamazad.ge (#${completedOrder.id})
+    return `ახალი შეკვეთა — lamazad.ge (#${completedOrder.id})
 ━━━━━━━━━━━━━━━━━━
-👤 სახელი: ${completedOrder.customerName}
-📞 ტელეფონი: ${completedOrder.phoneNumber}
-📍 მისამართი: ${completedOrder.districtName}, ${completedOrder.streetAddress}
+სახელი: ${completedOrder.customerName}
+ტელეფონი: ${completedOrder.phoneNumber}
+მისამართი: ${completedOrder.districtName}, ${completedOrder.streetAddress}
 
-📦 პროდუქტი: ${completedOrder.productSummary}
-💰 სულ გადასახდელი: ${formatGEL(completedOrder.totalAmount)} (${completedOrder.paymentLabel})
+პროდუქტი: ${completedOrder.productSummary}
+სულ გადასახდელი: ${formatGEL(completedOrder.totalAmount)} (${completedOrder.paymentLabel})
 
-🔗 დიზაინის / პროდუქტის ლინკი: ${completedOrder.productLink}
+პროდუქტის ლინკი: ${completedOrder.productLink}
 ━━━━━━━━━━━━━━━━━━
 გთხოვთ დამიდასტუროთ შეკვეთა!`;
   };
@@ -305,7 +305,7 @@ export function BatumiCheckoutModal() {
                       <input
                         type="tel"
                         required
-                        placeholder="+995 599 00 00 00"
+                        placeholder="+995 500 99 09 29"
                         value={phoneNumber}
                         onChange={(e) => setPhoneNumber(e.target.value)}
                         className="w-full min-h-[44px] pl-9 pr-3 py-2 bg-surface border border-border-subtle rounded-xl text-sm text-white placeholder-gray-500 font-mono focus:outline-none focus:border-brand-lime"

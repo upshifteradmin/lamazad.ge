@@ -24,21 +24,7 @@ export function BrandTicker({ onSelectBrand }: BrandTickerProps) {
       <div className="absolute left-0 top-0 bottom-0 w-24 bg-gradient-to-r from-[#070709] to-transparent z-10 pointer-events-none" />
       <div className="absolute right-0 top-0 bottom-0 w-24 bg-gradient-to-l from-[#070709] to-transparent z-10 pointer-events-none" />
 
-      {/* Top micro-bar: Authenticity assurance */}
-      <div className="max-w-7xl mx-auto px-4 mb-3 flex items-center justify-between text-[11px] font-mono text-zinc-400">
-        <div className="flex items-center gap-2">
-          <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
-          <span className="text-zinc-300 font-bold tracking-wider uppercase">
-            ავთენტური ბრენდების კოლექცია
-          </span>
-          <span className="text-zinc-600 hidden sm:inline">•</span>
-          <span className="text-zinc-400 hidden sm:inline">ადგილზე მოსინჯვა კურიერთან</span>
-        </div>
-        <div className="flex items-center gap-2 text-zinc-500">
-          <ShieldCheck className="w-3.5 h-3.5 text-emerald-400" />
-          <span>შემოწმებული ხარისხი // BATUMI</span>
-        </div>
-      </div>
+
 
       {/* Infinite Scrolling Marquee */}
       <div className="flex whitespace-nowrap overflow-hidden">

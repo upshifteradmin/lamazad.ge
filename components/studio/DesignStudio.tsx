@@ -38,10 +38,10 @@ const GARMENT_COLORS: GarmentColor[] = [
 ];
 
 const PRESET_STICKERS = [
-  { id: 'stk-1', name: 'Batumi Coordinates', label: '41.64° N / 41.63° E', icon: '📍', svgText: '41.64° N, 41.63° E\nBATUMI GEORGIA' },
-  { id: 'stk-2', name: 'ლამაზად Streetwear', label: 'ლამაზად™', icon: '⚡', svgText: 'ლ ა მ ა ზ ა დ\nEST. 2026' },
-  { id: 'stk-3', name: 'Black Sea Wave', label: 'შავი ზღვის ტალღა', icon: '🌊', svgText: 'BLACK SEA / 0422\nBATUMI SECTOR' },
-  { id: 'stk-4', name: 'Ali & Nino Cyber', label: 'ალი & ნინო', icon: '❤️', svgText: 'ALI & NINO\nKINETIC SOUL' },
+  { id: 'stk-1', name: 'Batumi Coordinates', label: '41.64° N / 41.63° E', icon: 'GEO', svgText: '41.64° N, 41.63° E\nBATUMI GEORGIA' },
+  { id: 'stk-2', name: 'ლამაზად Streetwear', label: 'ლამაზად™', icon: 'LMZ', svgText: 'ლ ა მ ა ზ ა დ\nEST. 2026' },
+  { id: 'stk-3', name: 'Black Sea Wave', label: 'შავი ზღვის ტალღა', icon: 'SEA', svgText: 'BLACK SEA / 0422\nBATUMI SECTOR' },
+  { id: 'stk-4', name: 'Ali & Nino Cyber', label: 'ალი & ნინო', icon: 'ART', svgText: 'ALI & NINO\nKINETIC SOUL' },
 ];
 
 const FONT_OPTIONS = [
@@ -494,7 +494,7 @@ export function DesignStudio() {
                 : 'text-zinc-400 hover:text-white'
             }`}
           >
-            👕 წინა მხარე
+            წინა მხარე
           </button>
           <button
             onClick={() => setSelectedGarment('tee-back')}
@@ -504,7 +504,7 @@ export function DesignStudio() {
                 : 'text-zinc-400 hover:text-white'
             }`}
           >
-            🔄 ზურგის მხარე
+            ზურგის მხარე
           </button>
         </div>
       </div>
@@ -731,28 +731,28 @@ export function DesignStudio() {
                       onClick={() => nudgeLayer(-3, 0)}
                       className="py-2.5 rounded-xl bg-[#16161f] border border-white/10 hover:border-brand-lime text-xs font-bold text-zinc-300 hover:text-white transition-all flex items-center justify-center active:scale-95"
                     >
-                      ⬅️
+                      ←
                     </button>
                     <button
                       type="button"
                       onClick={() => nudgeLayer(0, -3)}
                       className="py-2.5 rounded-xl bg-[#16161f] border border-white/10 hover:border-brand-lime text-xs font-bold text-zinc-300 hover:text-white transition-all flex items-center justify-center active:scale-95"
                     >
-                      ⬆️
+                      ↑
                     </button>
                     <button
                       type="button"
                       onClick={() => nudgeLayer(0, 3)}
                       className="py-2.5 rounded-xl bg-[#16161f] border border-white/10 hover:border-brand-lime text-xs font-bold text-zinc-300 hover:text-white transition-all flex items-center justify-center active:scale-95"
                     >
-                      ⬇️
+                      ↓
                     </button>
                     <button
                       type="button"
                       onClick={() => nudgeLayer(3, 0)}
                       className="py-2.5 rounded-xl bg-[#16161f] border border-white/10 hover:border-brand-lime text-xs font-bold text-zinc-300 hover:text-white transition-all flex items-center justify-center active:scale-95"
                     >
-                      ➡️
+                      →
                     </button>
                   </div>
                 </div>

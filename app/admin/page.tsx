@@ -127,7 +127,7 @@ export default function AdminDashboardPage() {
   // WhatsApp admin message trigger
   const generateAdminWhatsAppLink = (order: OrderRecord) => {
     const cleanPhone = order.phoneNumber.replace(/[^0-9]/g, '');
-    const message = `გამარჯობა ${order.customerName}! 🇬🇪\nlamazad.ge-ს ადმინისტრაცია გიკავშირდებათ თქვენს შეკვეთაზე (#${order.id}).\n\nსტატუსი: ${order.status}\nპროდუქტი: ${order.productSummary}\nმისამართი: ${order.districtName}, ${order.streetAddress}\n\nკურიერი მალე დაგიკავშირდებათ! ⚡`;
+    const message = `გამარჯობა ${order.customerName}!\nlamazad.ge-ს ადმინისტრაცია გიკავშირდებათ თქვენს შეკვეთაზე (#${order.id}).\n\nსტატუსი: ${order.status}\nპროდუქტი: ${order.productSummary}\nმისამართი: ${order.districtName}, ${order.streetAddress}\n\nკურიერი მალე დაგიკავშირდებათ!`;
     return `https://wa.me/${cleanPhone}?text=${encodeURIComponent(message)}`;
   };
 

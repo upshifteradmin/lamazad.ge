@@ -74,7 +74,9 @@ export function Footer() {
               </div>
               <div className="flex items-center gap-2.5">
                 <Phone className="w-4 h-4 text-brand-cyan shrink-0" />
-                <span className="font-mono text-white">+995 (422) 27-00-26</span>
+                <a href="tel:+995500990929" className="font-mono text-white hover:text-brand-lime transition-colors">
+                  +995 500 99 09 29
+                </a>
               </div>
               <div className="p-3 rounded-xl bg-surface border border-border-subtle text-[11px] text-gray-300">
                 <span className="text-brand-lime font-bold block">სამუშაო საათები:</span>
@@ -99,7 +101,7 @@ export function Footer() {
               </div>
               <div className="flex items-center gap-2 text-gray-300">
                 <Zap className="w-4 h-4 text-brand-lime" />
-                ადგილზე მოსინჯვა კურიერის თანდასწრებით
+                სწრაფი და უსაფრთხო მიწოდება
               </div>
             </div>
           </div>

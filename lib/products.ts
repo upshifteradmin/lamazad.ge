@@ -49,7 +49,7 @@ export const PRODUCTS: Product[] = [
     stockCount: 4,
     isLimitedDrop: true,
     isNewArrival: true,
-    tagKa: '🔥 ყველაზე მოთხოვნადი',
+    tagKa: 'ყველაზე მოთხოვნადი',
     descriptionKa: 'ლეგენდარული შავ-თეთრი Dunk Low Retro. პრემიუმ ტყავის ზედაპირი, კლასიკური საკალათბურთო პროფილი და კომფორტული ქაფის ძირი. ოფიციალური ევროპული დისტრიბუცია.',
     descriptionEn: 'The iconic Nike Dunk Low Retro Panda colorway. Smooth leather upper with timeless two-tone blocking.',
     images: [
@@ -65,7 +65,7 @@ export const PRODUCTS: Product[] = [
       { label: 'ბრენდი', value: 'Nike' },
       { label: 'მოდელის კოდი', value: 'DD1391-100' },
       { label: 'მასალა', value: 'ნატურალური რბილი ტყავი' },
-      { label: 'მიწოდება', value: 'ბათუმში 24 საათში ადგილზე მოსინჯვით' },
+      { label: 'მიწოდება', value: 'ბათუმში 24 საათში' },
     ],
   },
   {
@@ -81,7 +81,7 @@ export const PRODUCTS: Product[] = [
     originalPrice: 350, // -17%
     stockCount: 6,
     isNewArrival: false,
-    tagKa: '⭐ Streetwear კლასიკა',
+    tagKa: 'Streetwear კლასიკა',
     descriptionKa: 'ქუჩის სტილის მარადიული სიმბოლო. თოვლივით თეთრი ტყავი, ჩამონტაჟებული Nike Air ბალიში და უწყვეტი გამძლეობა. იდეალურია ნებისმიერი ლუქისთვის.',
     descriptionEn: 'The radiant Nike Air Force 1 07 delivers fresh details with the same iconic cushioning you love.',
     images: [
@@ -113,7 +113,7 @@ export const PRODUCTS: Product[] = [
     stockCount: 3,
     isLimitedDrop: false,
     isNewArrival: true,
-    tagKa: '⚡ Tech Fleece სერია',
+    tagKa: 'Tech Fleece სერია',
     descriptionKa: 'მსუბუქი სითბო და პრემიუმ ურბანული სტილი. ორმხრივი გლუვი საწმისი, თერმო-ელვა და დახვეწილი მკლავის ჯიბე. საუკეთესო არჩევანი ბათუმის დინამიური დღეებისთვის.',
     descriptionEn: 'Premium low-profile fleece that feels smooth on both sides. Distinctive zippered chevron pocket.',
     images: [
@@ -147,7 +147,7 @@ export const PRODUCTS: Product[] = [
     originalPrice: 380, // -18%
     stockCount: 5,
     isNewArrival: true,
-    tagKa: '🔥 2026 წლის ჰიტი',
+    tagKa: '2026 წლის ჰიტი',
     descriptionKa: 'ტრიბუნების საკულტო ფეხსაცმელი, რომელიც თანამედროვე ქუჩის მოდის N1 ტრენდად იქცა. რბილი ტყავი, ზამშის T-toe და კლასიკური რეზინის ყავისფერი Gum sole.',
     descriptionEn: 'Born on the pitch, the Samba is a timeless icon of street style. Leather upper with suede overlays and gum rubber outsole.',
     images: [
@@ -177,7 +177,7 @@ export const PRODUCTS: Product[] = [
     price: 275,
     originalPrice: 340, // -19%
     stockCount: 3,
-    tagKa: '🌊 ბათუმის ფავორიტი',
+    tagKa: 'ბათუმის ფავორიტი',
     descriptionKa: 'პრემიუმ ხავერდოვანი ზამში ლურჯ ტონალობაში, გამჭვირვალე რეზინის ძირით. 70-იანი წლების ვინტაჟური ესთეტიკა შეუდარებელი კომფორტით.',
     descriptionEn: 'Rich suede upper paired with a semi-translucent gum rubber outsole for authentic retro cool.',
     images: [
@@ -206,7 +206,7 @@ export const PRODUCTS: Product[] = [
     price: 280,
     stockCount: 5,
     isLimitedDrop: false,
-    tagKa: '🛹 Y2K Skate Vibe',
+    tagKa: 'Y2K Skate Vibe',
     descriptionKa: 'ფართო სილუეტი, განიერი თასმები და 2000-იანების სკეიტბორდინგის კულტურა. სქელი ზამში და შეუდარებელი გამძლეობა.',
     descriptionEn: 'Chunky Y2K skate proportions with plush suede and extra-wide contrasting laces.',
     images: [
@@ -238,7 +238,7 @@ export const PRODUCTS: Product[] = [
     stockCount: 2,
     isLimitedDrop: true,
     isNewArrival: true,
-    tagKa: '💎 GRAIL STATUS',
+    tagKa: 'GRAIL STATUS',
     descriptionKa: 'საკოლექციო დონის ლეგენდა. ვინტაჟური დამუშავების ტყავი, საკულტო წითელ-თეთრ-შავი პალიტრა და დანომრილი პარტია. სრული ქარხნული შეფუთვითა და აქსესუარებით.',
     descriptionEn: 'The silhouette that started it all. Premium cracked leather finish and aged midsole storytelling.',
     images: [
@@ -269,7 +269,7 @@ export const PRODUCTS: Product[] = [
     originalPrice: 720, // -18%
     stockCount: 2,
     isLimitedDrop: true,
-    tagKa: '🔥 HYPE DROP',
+    tagKa: 'HYPE DROP',
     descriptionKa: 'ყველაზე ცხელი Jordan 4 სილუეტი. ნატურალური ტყავი ნაცრისფერი ზამშის ტალღოვანი ჩანართებით, ბადისებრი პანელები და ხილული Air ბალიში ქუსლში.',
     descriptionEn: 'Crisp white leather upper enhanced with neutral grey suede overlay and contrasting black wings.',
     images: [
@@ -302,7 +302,7 @@ export const PRODUCTS: Product[] = [
     originalPrice: 370, // -20%
     stockCount: 4,
     isNewArrival: true,
-    tagKa: '🌿 Retro Basketball',
+    tagKa: 'Retro Basketball',
     descriptionKa: '80-იანი წლების არქივებიდან დაბრუნებული შედევრი. სუფთა თეთრი პერფორირებული ტყავი, მწვანე აქცენტები და ვინტაჟური კალათბურთის ესთეტიკა.',
     descriptionEn: 'Tribute to 1989 basketball pro players. Clean leather and stream-lined retro low silhouette.',
     images: [
@@ -333,7 +333,7 @@ export const PRODUCTS: Product[] = [
     originalPrice: 475, // -20%
     stockCount: 3,
     isLimitedDrop: true,
-    tagKa: '⚡ Deconstructed Design',
+    tagKa: 'Deconstructed Design',
     descriptionKa: 'დაფლეთილი ზამშის პანელები და ნედლი ჭრები. N-ergy ამორტიზაცია და Stability Web ტექნოლოგია მაქსიმალური ერგონომიკისთვის ბათუმის ქუჩებში სასეირნოდ.',
     descriptionEn: 'Raw-edged hairy suede overlays give an archival runner a rugged, unfinished modern flair.',
     images: [
@@ -361,7 +361,7 @@ export const PRODUCTS: Product[] = [
     categoryLabelKa: 'სნეიკერები / New Balance',
     price: 340,
     stockCount: 4,
-    tagKa: '⚡ Y2K Cyber Runner',
+    tagKa: 'Y2K Cyber Runner',
     descriptionKa: 'კიბერნეტიკული მეტალიკი და სუნთქვადი ბადე. N-lock თასმების სისტემა და ულტრა-რბილი ნაბიჯი. იდეალურია მათთვის, ვისაც უყვარს 2026/2027 ტექ-ესთეტიკა.',
     descriptionEn: 'High-tech Y2K runner with metallic open mesh and responsive N-ergy sole unit.',
     images: [
@@ -392,7 +392,7 @@ export const PRODUCTS: Product[] = [
     originalPrice: 300, // -20%
     stockCount: 6,
     isNewArrival: true,
-    tagKa: '👖 კულტურული ხატი',
+    tagKa: 'კულტურული ხატი',
     descriptionKa: 'ჯინსის ისტორიის საწყისი 1873 წლიდან. კლასიკური სწორი ჭრა, საკულტო ღილებიანი ჩამკეტი (Button Fly) და 100% მყარი დენიმი, რომელიც წლების მატებასთან ერთად უკეთესი ხდება.',
     descriptionEn: 'The original straight fit jeans since 1873. Signature button fly and 100% heavyweight cotton denim.',
     images: [
@@ -422,7 +422,7 @@ export const PRODUCTS: Product[] = [
     price: 270,
     originalPrice: 340, // -21%
     stockCount: 4,
-    tagKa: '🧥 ვინტაჟური ქურთუკი',
+    tagKa: 'ვინტაჟური ქურთუკი',
     descriptionKa: 'ქუჩის სტილის ოვერსაიზ სილუეტი. ნარეცხი მუქი ინდიგო მეტალის ბრენდირებული ღილებითა და მკერდის ნაკერებიანი ჯიბეებით. იდეალურად ერგება ჰუდზე მოსაცმელად.',
     descriptionEn: 'Slouchy relaxed trucker jacket silhouette built from durable washed indigo denim.',
     images: [
@@ -454,7 +454,7 @@ export const PRODUCTS: Product[] = [
     stockCount: 3,
     isLimitedDrop: true,
     isNewArrival: true,
-    tagKa: '🔨 მძიმე Dearborn Canvas',
+    tagKa: 'მძიმე Dearborn Canvas',
     descriptionKa: 'სამუშაო ტანსაცმლის გამძლეობა გადატანილი ქუჩის მაღალ მოდაში. 12 უნცია მძიმე Dearborn ბამბის ტილო, თბილი შიდა სარჩული და სამმაგი გამაგრებული ნაკერები.',
     descriptionEn: 'Built from heavyweight 12 oz organic Dearborn Canvas with triple-stitched details and square Carhartt label.',
     images: [
@@ -488,7 +488,7 @@ export const PRODUCTS: Product[] = [
     stockCount: 3,
     isLimitedDrop: true,
     isNewArrival: true,
-    tagKa: '🔥 დარჩენილია 3 ცალი',
+    tagKa: 'დარჩენილია 3 ცალი',
     descriptionKa: 'ულტრა-მძიმე 500 გრამიანი ფრანგული ტერი ბამბა. ემბოსირებული Batumi Nocturne გრაფიკა ზურგზე, წყალგამძლე ელვა და ოვერსაიზ სილუეტი. შექმნილია ბათუმის ნესტიანი და ქარიანი საღამოებისთვის.',
     descriptionEn: 'Ultra-heavy 500 GSM French terry cotton. Embossed Nocturne print on back, waterproof accents and slouchy oversized silhouette.',
     images: [
@@ -521,7 +521,7 @@ export const PRODUCTS: Product[] = [
     price: 110,
     stockCount: 5,
     isLimitedDrop: true,
-    tagKa: '💎 50 ცალიანი კოლექცია',
+    tagKa: '50 ცალიანი კოლექცია',
     descriptionKa: 'ბათუმის საკულტო მოძრავი სკულპტურის კიბერპანკ რეინტერპრეტაცია. მაღალი რეზოლუციის აბრეშუმის ტრაფარეტული ბეჭდვა მბზინავი პიგმენტებით, რომელიც ულტრაიისფერ შუქზე ანათებს.',
     descriptionEn: 'Cyberpunk reimagining of the iconic kinetic Ali & Nino sculpture. High-density screen print with UV reactive pigments.',
     images: [
@@ -553,7 +553,7 @@ export const PRODUCTS: Product[] = [
     price: 175,
     originalPrice: 250, // -30%
     stockCount: 8,
-    tagKa: '🌊 ბათუმის პორტის სერია',
+    tagKa: 'ბათუმის პორტის სერია',
     descriptionKa: 'ტექნიკური Ripstop ქსოვილი წყალგაუმტარი საფარით. 6 მოდულური ჯიბე მაგნიტური საკეტებით, რეგულირებადი ქვედა ნაწილი ფეხსაცმელთან კომბინაციისთვის.',
     descriptionEn: 'Technical ripstop cargo pants with water-repellent coating and magnetic quick-access pockets.',
     images: [
