@@ -20,9 +20,14 @@ import { formatGEL } from '@/lib/utils';
 export function Navbar() {
   const { getTotalCount, getTotalPrice, openDrawer, soundEnabled, toggleSound } = useCartStore();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [mounted, setMounted] = React.useState(false);
 
-  const totalCount = getTotalCount();
-  const totalPrice = getTotalPrice();
+  React.useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  const totalCount = mounted ? getTotalCount() : 0;
+  const totalPrice = mounted ? getTotalPrice() : 0;
 
   return (
     <header className="sticky top-0 z-40 w-full bg-[#09090b]/90 backdrop-blur-xl border-b border-white/10">

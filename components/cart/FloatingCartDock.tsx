@@ -8,11 +8,16 @@ import { formatGEL } from '@/lib/utils';
 
 export function FloatingCartDock() {
   const { items, openDrawer, openCheckout, getTotalCount, getTotalPrice } = useCartStore();
+  const [mounted, setMounted] = React.useState(false);
+
+  React.useEffect(() => {
+    setMounted(true);
+  }, []);
 
   const totalCount = getTotalCount();
   const totalPrice = getTotalPrice();
 
-  if (totalCount === 0) return null;
+  if (!mounted || totalCount === 0) return null;
 
   return (
     <AnimatePresence>
