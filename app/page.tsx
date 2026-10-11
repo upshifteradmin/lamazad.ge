@@ -29,9 +29,8 @@ export default function HomePage() {
 
   return (
     <div className="w-full bg-[#09090b] relative overflow-hidden bg-grid-pattern">
-      {/* Subtle Glow Ambient Lights */}
-      <div className="absolute top-16 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-brand-lime/10 blur-[130px] pointer-events-none rounded-full" />
-      <div className="absolute top-[800px] right-0 w-[450px] h-[300px] bg-brand-cyan/10 blur-[140px] pointer-events-none rounded-full" />
+      {/* Hardware-Accelerated Ambient Glow */}
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_50%_at_50%_0%,rgba(212,255,0,0.05),transparent)] pointer-events-none" />
 
       {/* 1. HERO SECTION */}
       <section className="relative pt-10 pb-12 sm:pt-16 sm:pb-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto text-center">
@@ -123,7 +122,6 @@ export default function HomePage() {
       {/* 4. STANDALONE SALE SHOWCASE SECTION */}
       <section id="sale" className="py-8 sm:py-12 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto scroll-mt-24">
         <div className="rounded-3xl bg-gradient-to-br from-[#1c0c12]/90 via-[#13090e] to-surface border border-rose-500/35 p-6 sm:p-8 shadow-[0_0_35px_rgba(244,63,94,0.15)] relative overflow-hidden">
-          <div className="absolute top-0 right-0 w-80 h-80 bg-rose-500/10 blur-[110px] pointer-events-none rounded-full" />
 
           <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-3 mb-8 pb-4 border-b border-rose-500/20">
             <div>
@@ -140,7 +138,7 @@ export default function HomePage() {
             </div>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-3.5 sm:gap-6">
             {saleProducts.map((product) => (
               <ProductCard key={`sale-${product.id}`} product={product} />
             ))}
@@ -151,7 +149,6 @@ export default function HomePage() {
       {/* 5. 1-CLICK BATUMI EXPRESS CONTACT */}
       <section className="py-12 px-4 sm:px-6 lg:px-8 max-w-3xl mx-auto text-center">
         <div className="p-6 sm:p-8 rounded-3xl bg-surface border border-border-subtle relative overflow-hidden">
-          <div className="absolute top-0 right-0 w-64 h-64 bg-brand-lime/10 blur-[90px] rounded-full pointer-events-none" />
           <h3 className="text-xl sm:text-2xl font-black text-white tracking-tight">
             გჭირდებათ დახმარება შეკვეთაში?
           </h3>
