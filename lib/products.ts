@@ -2,7 +2,7 @@ export interface Product {
   id: string;
   slug: string;
   brand: string; // 'Nike', 'Adidas', 'Jordan', "Levi's", 'New Balance', 'Carhartt', 'Lamazad Custom'
-  isAuthentic?: boolean; // 100% verified original guarantee badge
+  isAuthentic?: boolean;
   titleKa: string;
   titleEn: string;
   category: 'sneakers' | 'streetwear' | 'limited-drops';
@@ -50,7 +50,7 @@ export const PRODUCTS: Product[] = [
     isLimitedDrop: true,
     isNewArrival: true,
     tagKa: '🔥 ყველაზე მოთხოვნადი',
-    descriptionKa: 'ლეგენდარული შავ-თეთრი Dunk Low Retro. პრემიუმ ტყავის ზედაპირი, კლასიკური საკალათბურთო პროფილი და კომფორტული ქაფის ძირი. 100% ორიგინალი ოფიციალური ევროპული ლოტისგან.',
+    descriptionKa: 'ლეგენდარული შავ-თეთრი Dunk Low Retro. პრემიუმ ტყავის ზედაპირი, კლასიკური საკალათბურთო პროფილი და კომფორტული ქაფის ძირი. ოფიციალური ევროპული დისტრიბუცია.',
     descriptionEn: 'The iconic Nike Dunk Low Retro Panda colorway. Smooth leather upper with timeless two-tone blocking.',
     images: [
       'https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?auto=format&fit=crop&w=1000&q=80',
@@ -62,7 +62,7 @@ export const PRODUCTS: Product[] = [
       { name: 'White / Black Panda', hex: '#111111' },
     ],
     specs: [
-      { label: 'ბრენდი', value: 'Nike (100% ორიგინალი)' },
+      { label: 'ბრენდი', value: 'Nike' },
       { label: 'მოდელის კოდი', value: 'DD1391-100' },
       { label: 'მასალა', value: 'ნატურალური რბილი ტყავი' },
       { label: 'მიწოდება', value: 'ბათუმში 24 საათში ადგილზე მოსინჯვით' },
@@ -94,7 +94,7 @@ export const PRODUCTS: Product[] = [
       { name: 'Triple White', hex: '#ffffff' },
     ],
     specs: [
-      { label: 'ბრენდი', value: 'Nike (Verified Authentic)' },
+      { label: 'ბრენდი', value: 'Nike' },
       { label: 'ამორტიზაცია', value: 'Encapsulated Nike Air-Sole unit' },
       { label: 'ძირი', value: 'არამცურავი რეზინის პროტექტორი' },
     ],
@@ -162,7 +162,7 @@ export const PRODUCTS: Product[] = [
     specs: [
       { label: 'ბრენდი', value: 'Adidas Originals' },
       { label: 'ძირი', value: 'Gum Rubber Cupsole' },
-      { label: 'წარმოშობა', value: '100% ავთენტური ევროპული იმპორტი' },
+      { label: 'წარმოშობა', value: 'ოფიციალური ევროპული დისტრიბუცია' },
     ],
   },
   {
@@ -239,7 +239,7 @@ export const PRODUCTS: Product[] = [
     isLimitedDrop: true,
     isNewArrival: true,
     tagKa: '💎 GRAIL STATUS',
-    descriptionKa: 'საკოლექციო დონის ლეგენდა. ვინტაჟური დამუშავების ტყავი, საკულტო წითელ-თეთრ-შავი პალიტრა და დანომრილი პარტია. 100% ორიგინალი ავთენტიფიკაციის სერტიფიკატით.',
+    descriptionKa: 'საკოლექციო დონის ლეგენდა. ვინტაჟური დამუშავების ტყავი, საკულტო წითელ-თეთრ-შავი პალიტრა და დანომრილი პარტია. სრული ქარხნული შეფუთვითა და აქსესუარებით.',
     descriptionEn: 'The silhouette that started it all. Premium cracked leather finish and aged midsole storytelling.',
     images: [
       'https://images.unsplash.com/photo-1552346154-21d32810aba3?auto=format&fit=crop&w=1000&q=80',
@@ -253,7 +253,7 @@ export const PRODUCTS: Product[] = [
     specs: [
       { label: 'ხაზი', value: 'Jordan Brand Retro High' },
       { label: 'სტატუსი', value: 'Deadstock Collector Grail' },
-      { label: 'გარანტია', value: '100% Original Verified' },
+      { label: 'კოლექცია', value: 'Jordan Brand OG Retro' },
     ],
   },
   {
@@ -284,7 +284,7 @@ export const PRODUCTS: Product[] = [
     specs: [
       { label: 'მოდელი', value: 'Air Jordan 4 Retro' },
       { label: 'ქუსლი', value: 'Visible Air Sole Cushioning' },
-      { label: 'ორიგინალი', value: 'დამოწმებული შტრიხკოდით' },
+      { label: 'სტატუსი', value: 'მარაგშია (ახალი)' },
     ],
   },
 
@@ -405,7 +405,7 @@ export const PRODUCTS: Product[] = [
       { name: 'Medium Stonewash Indigo', hex: '#395175' },
     ],
     specs: [
-      { label: 'ბრენდი', value: "Levi's (100% ორიგინალი წითელი ტაბით)" },
+      { label: 'ბრენდი', value: "Levi's (Red Tab Denim)" },
       { label: 'ჭრა', value: 'Straight Leg, Regular Rise' },
       { label: 'შემადგენლობა', value: '100% Non-Stretch Cotton Denim (14 oz)' },
     ],

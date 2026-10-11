@@ -244,17 +244,15 @@ export function ProductCard({ product }: ProductCardProps) {
         {/* Product Details Section */}
         <div className="p-5 flex flex-col flex-1 justify-between bg-surface-card">
           <div>
-            {/* Brand identity & Authenticity badge */}
+            {/* Brand identity & Authentic stock status */}
             <div className="flex items-center justify-between gap-2 mb-1.5">
               <span className="text-xs uppercase tracking-wider text-zinc-300 font-black font-mono">
                 {product.brand}
               </span>
-              {product.isAuthentic !== false && (
-                <span className="inline-flex items-center gap-1 text-[10px] font-mono text-emerald-400 bg-emerald-500/10 border border-emerald-500/25 px-2 py-0.5 rounded-full font-semibold">
-                  <CheckCircle2 className="w-3 h-3 text-emerald-400 shrink-0" />
-                  100% ორიგინალი
-                </span>
-              )}
+              <span className="inline-flex items-center gap-1.5 text-[10px] font-mono text-zinc-400">
+                <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
+                მარაგშია
+              </span>
             </div>
 
             <h3

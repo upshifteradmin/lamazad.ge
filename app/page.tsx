@@ -51,7 +51,7 @@ export default function HomePage() {
 
         <p className="mt-4 text-xs sm:text-sm text-gray-400 max-w-xl mx-auto font-mono">
           Nike • Adidas • Jordan • Levi's • New Balance • Carhartt
-          <br className="hidden sm:inline" /> 100% ორიგინალი გარანტიით & ბათუმის ექსპრეს მიწოდებით
+          <br className="hidden sm:inline" /> პრემიუმ კოლექციები • ექსპრეს მიწოდება ბათუმში • ადგილზე მოსინჯვა
         </p>
 
         {/* Direct Action Navigation */}
@@ -80,7 +80,7 @@ export default function HomePage() {
           </span>
           <span className="flex items-center gap-1.5">
             <ShieldCheck className="w-3.5 h-3.5 text-brand-cyan" />
-            100% ორიგინალი
+            ადგილზე მოსინჯვით
           </span>
         </div>
       </section>
@@ -99,7 +99,7 @@ export default function HomePage() {
               </span>
             </h2>
             <p className="text-xs text-brand-muted mt-0.5">
-              მზა ფეხსაცმელი და ტანსაცმელი • 100% ორიგინალი
+              ფეხსაცმელი & ქუჩის სტილის ტანსაცმელი • ბათუმი
             </p>
           </div>
 

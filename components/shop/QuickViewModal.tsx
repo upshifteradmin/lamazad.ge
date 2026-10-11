@@ -96,17 +96,15 @@ export function QuickViewModal() {
           {/* Right: Info & Buying */}
           <div className="p-5 sm:p-8 flex flex-col justify-between">
             <div>
-              {/* Brand and authenticity guarantee */}
+              {/* Brand and stock status */}
               <div className="flex items-center justify-between gap-2 mb-2 pr-8 sm:pr-0">
                 <span className="text-xs uppercase tracking-widest text-zinc-300 font-mono font-black">
                   {quickViewProduct.brand}
                 </span>
-                {quickViewProduct.isAuthentic !== false && (
-                  <span className="inline-flex items-center gap-1 text-[11px] font-mono text-emerald-400 bg-emerald-500/10 border border-emerald-500/25 px-2.5 py-0.5 rounded-full font-semibold">
-                    <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400" />
-                    100% ორიგინალი
-                  </span>
-                )}
+                <span className="inline-flex items-center gap-1.5 text-[11px] font-mono text-emerald-400 bg-emerald-500/10 border border-emerald-500/25 px-2.5 py-0.5 rounded-full font-semibold">
+                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
+                  მარაგშია • ბათუმი
+                </span>
               </div>
 
               <div className="flex items-center gap-2 mb-2">
@@ -194,7 +192,7 @@ export function QuickViewModal() {
                 </span>
                 <span className="flex items-center gap-1.5">
                   <Shield className="w-3.5 h-3.5 text-brand-lime shrink-0" />
-                  100% ორიგინალი ხარისხი
+                  ადგილზე მოსინჯვით
                 </span>
               </div>
             </div>

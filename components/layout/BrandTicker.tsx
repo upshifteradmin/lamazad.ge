@@ -29,10 +29,10 @@ export function BrandTicker({ onSelectBrand }: BrandTickerProps) {
         <div className="flex items-center gap-2">
           <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
           <span className="text-zinc-300 font-bold tracking-wider uppercase">
-            ოფიციალური & ავთენტური ბრენდები
+            ავთენტური ბრენდების კოლექცია
           </span>
           <span className="text-zinc-600 hidden sm:inline">•</span>
-          <span className="text-zinc-500 hidden sm:inline">100% ორიგინალი გარანტიით</span>
+          <span className="text-zinc-400 hidden sm:inline">ადგილზე მოსინჯვა კურიერთან</span>
         </div>
         <div className="flex items-center gap-2 text-zinc-500">
           <ShieldCheck className="w-3.5 h-3.5 text-emerald-400" />

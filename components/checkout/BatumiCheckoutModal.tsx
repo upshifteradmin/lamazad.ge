@@ -191,17 +191,17 @@ export function BatumiCheckoutModal() {
 
   return (
     <AnimatePresence>
-      <div className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4 bg-black/85 backdrop-blur-md overflow-y-auto">
+      <div className="fixed inset-0 z-50 flex items-center justify-center p-2.5 sm:p-4 bg-black/85 backdrop-blur-md overflow-y-auto overscroll-contain">
         <motion.div
           initial={{ opacity: 0, scale: 0.95, y: 15 }}
           animate={{ opacity: 1, scale: 1, y: 0 }}
           exit={{ opacity: 0, scale: 0.95, y: 15 }}
-          className="w-full max-w-xl bg-[#0c0c10] border border-border-subtle rounded-3xl p-5 sm:p-7 shadow-2xl relative text-white my-6"
+          className="w-full max-w-xl max-h-[92vh] overflow-y-auto overscroll-contain bg-[#0c0c10] border border-border-subtle rounded-3xl p-4 sm:p-7 shadow-2xl relative text-white my-auto"
         >
           {/* Close button */}
           <button
             onClick={resetAndClose}
-            className="absolute top-4 right-4 p-2 rounded-xl text-gray-400 hover:text-white hover:bg-surface transition-colors min-h-[44px] min-w-[44px] flex items-center justify-center"
+            className="absolute top-3 right-3 sm:top-4 sm:right-4 z-20 p-2 rounded-xl text-gray-400 hover:text-white hover:bg-surface transition-colors min-h-[44px] min-w-[44px] flex items-center justify-center bg-black/40 sm:bg-transparent"
           >
             <X className="w-5 h-5" />
           </button>

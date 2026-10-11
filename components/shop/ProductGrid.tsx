@@ -133,8 +133,8 @@ export function ProductGrid({ products, activeBrand, onBrandChange }: ProductGri
         <div className="flex items-center justify-between gap-2 mb-2 px-1">
           <div className="flex items-center gap-2">
             <span className="text-[11px] font-mono uppercase text-zinc-400 font-bold tracking-wider flex items-center gap-1.5">
-              <CheckCircle2 className="w-3 h-3 text-emerald-400" />
-              ტოპ ბრენდები (100% ორიგინალი):
+              <span className="w-2 h-2 rounded-full bg-brand-lime" />
+              ბრენდების კოლექცია:
             </span>
           </div>
           {isFiltered && (
