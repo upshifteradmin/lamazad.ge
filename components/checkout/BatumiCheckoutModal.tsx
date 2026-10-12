@@ -46,13 +46,13 @@ export function BatumiCheckoutModal() {
   const [completedOrder, setCompletedOrder] = useState<{
     id: string;
     totalAmount: number;
+    deliveryFee: number;
     customerName: string;
     phoneNumber: string;
     districtName: string;
     streetAddress: string;
-    productSummary: string;
     paymentLabel: string;
-    productLink: string;
+    items: typeof items;
   } | null>(null);
 
   if (!isCheckoutOpen) return null;
@@ -77,7 +77,7 @@ export function BatumiCheckoutModal() {
     setIsSubmitting(true);
 
     const generatedCode = `LMZ-${Math.floor(10000 + Math.random() * 90000)}`;
-    const productLink = typeof window !== 'undefined' ? `${window.location.origin}/#catalog` : 'https://lamazad.ge';
+    const orderItems = [...items];
 
     try {
       // 1. Save order immediately to Backend / Database
@@ -96,7 +96,7 @@ export function BatumiCheckoutModal() {
           subtotal,
           deliveryFee,
           totalAmount: finalTotal,
-          items,
+          items: orderItems,
           productSummary,
         }),
       });
@@ -107,13 +107,13 @@ export function BatumiCheckoutModal() {
       setCompletedOrder({
         id: confirmedId,
         totalAmount: finalTotal,
+        deliveryFee,
         customerName: fullName,
         phoneNumber,
         districtName: currentDistrict.nameKa,
         streetAddress: `${streetAddress} ${apartment ? `(${apartment})` : ''}`,
-        productSummary,
         paymentLabel: paymentMethodLabels[paymentMethod] || 'ნაღდი',
-        productLink,
+        items: orderItems,
       });
 
       setIsSubmitting(false);
@@ -137,13 +137,13 @@ export function BatumiCheckoutModal() {
       setCompletedOrder({
         id: generatedCode,
         totalAmount: finalTotal,
+        deliveryFee,
         customerName: fullName,
         phoneNumber,
         districtName: currentDistrict.nameKa,
         streetAddress: `${streetAddress} ${apartment ? `(${apartment})` : ''}`,
-        productSummary,
         paymentLabel: paymentMethodLabels[paymentMethod] || 'ნაღდი',
-        productLink,
+        items: orderItems,
       });
       setIsSubmitting(false);
       setIsSuccess(true);
@@ -151,9 +151,36 @@ export function BatumiCheckoutModal() {
     }
   };
 
-  // Generate Automated Message String formatted exactly as requested
+  // Generate Automated Message String formatted with full item IDs, sizes, and direct product links
   const formatDispatchMessage = () => {
     if (!completedOrder) return '';
+
+    const origin = typeof window !== 'undefined' ? window.location.origin : 'https://lamazad.ge';
+
+    const itemsText = completedOrder.items
+      .map((item, index) => {
+        const itemUrl = item.isCustomStudio
+          ? `${origin}/studio`
+          : `${origin}/?product=${encodeURIComponent(item.productId || '')}#catalog`;
+
+        const details = [
+          `${index + 1}. ${item.title}`,
+          `   ID: ${item.productId || 'N/A'}`,
+          `   ზომა: ${item.size}${item.colorName ? ` | ფერი: ${item.colorName}` : ''}`,
+          `   რაოდენობა: ${item.quantity} x ${formatGEL(item.price)} = ${formatGEL(item.price * item.quantity)}`,
+          `   ლინკი: ${itemUrl}`,
+        ];
+
+        if (item.isCustomStudio && item.customDetails?.textPrint) {
+          details.push(`   Studio პრინტი: "${item.customDetails.textPrint}"`);
+        }
+
+        return details.join('\n');
+      })
+      .join('\n\n');
+
+    const deliveryText =
+      completedOrder.deliveryFee === 0 ? 'უფასო (0 ₾)' : `${completedOrder.deliveryFee} ₾`;
 
     return `ახალი შეკვეთა — lamazad.ge (#${completedOrder.id})
 ━━━━━━━━━━━━━━━━━━
@@ -161,10 +188,11 @@ export function BatumiCheckoutModal() {
 ტელეფონი: ${completedOrder.phoneNumber}
 მისამართი: ${completedOrder.districtName}, ${completedOrder.streetAddress}
 
-პროდუქტი: ${completedOrder.productSummary}
-სულ გადასახდელი: ${formatGEL(completedOrder.totalAmount)} (${completedOrder.paymentLabel})
+შეკვეთილი ნივთები:
+${itemsText}
 
-პროდუქტის ლინკი: ${completedOrder.productLink}
+მიტანა ბათუმში: ${deliveryText}
+სულ გადასახდელი: ${formatGEL(completedOrder.totalAmount)} (${completedOrder.paymentLabel})
 ━━━━━━━━━━━━━━━━━━
 გთხოვთ დამიდასტუროთ შეკვეთა!`;
   };

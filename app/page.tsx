@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import {
   Sparkles,
@@ -14,10 +14,30 @@ import { PRODUCTS } from '@/lib/products';
 import { ProductGrid } from '@/components/shop/ProductGrid';
 import { ProductCard } from '@/components/shop/ProductCard';
 import { BrandTicker } from '@/components/layout/BrandTicker';
+import { useCartStore } from '@/lib/store';
 
 export default function HomePage() {
   const [activeBrand, setActiveBrand] = useState<string>('all');
+  const { setQuickViewProduct } = useCartStore();
   const saleProducts = PRODUCTS.filter((p) => p.originalPrice && p.originalPrice > p.price);
+
+  useEffect(() => {
+    if (typeof window === 'undefined') return;
+    const params = new URLSearchParams(window.location.search);
+    const productId = params.get('product');
+    if (productId) {
+      const found = PRODUCTS.find((p) => p.id === productId || p.slug === productId);
+      if (found) {
+        setQuickViewProduct(found);
+        setTimeout(() => {
+          const catalogEl = document.getElementById('catalog');
+          if (catalogEl) {
+            catalogEl.scrollIntoView({ behavior: 'smooth' });
+          }
+        }, 150);
+      }
+    }
+  }, [setQuickViewProduct]);
 
   const handleSelectBrand = (brand: string) => {
     setActiveBrand(brand);
